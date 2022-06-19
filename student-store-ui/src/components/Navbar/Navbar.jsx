@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="links"></div>
       <ul>
         <li to="/">
-          {/* <Home/> */}
+        {/* <Home/> */}
         </li>
         {/* <li to="/about"><About/></li> */}
         {/* <li to="/contact"><Contact/></li> */}

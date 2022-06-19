@@ -7,7 +7,7 @@ export default function ProductCard({ item }) {
       <div className="product-card">
         <div className="media">
           <Link to={"/products/"+item.id}>
-            <img src={item.image} alt="product cover" loading="lazy"/>
+            <img src={item.image} alt="product cover" loading="lazy" height="267px" width="267px"/>
           </Link>
         </div>
         <div className="product-info">

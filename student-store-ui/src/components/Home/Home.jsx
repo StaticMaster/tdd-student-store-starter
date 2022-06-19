@@ -8,7 +8,7 @@ export default function Home(props) {
   return (
     <div className="Home">
 
-    <SubNavbar/>
+    <SubNavbar SearchData={props.SearchData}/>
      <ProductGrid products={props.products}/> 
 
    {/* <ul> {

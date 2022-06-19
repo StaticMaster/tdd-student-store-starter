@@ -27,6 +27,20 @@ useEffect(()=> {
 getData();
 }, [])
 
+async function SearchData(searchValue){
+  const responseData= await axios.get(URL).then((response)=>{
+    return response.data.products
+  })
+  let array=[]
+  for (let i=0;i<16;i++){
+  if (responseData[i].name.toLowerCase().includes(searchValue))
+  array.push(responseData[i])
+  
+  }
+  setProducts(array)
+
+}
+
 
   return (
     <div className="app">
@@ -35,7 +49,7 @@ getData();
           {/* YOUR CODE HERE! */}
           <Navbar   />
           <Sidebar  />
-          <Home products={products} />
+          <Home products={products} SearchData={SearchData}/>
         </main>
       </BrowserRouter>
     </div>

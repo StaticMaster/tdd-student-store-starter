@@ -2,9 +2,10 @@
     height: 350px;
     width: 250px;
     background: #fff;
-    display: flex;
+    
     flex-direction: column;
     border: solid 1px #e4e4e4;
+   
 }
 
 .product-grid .product-card .media {
@@ -44,3 +45,9 @@ a {
     font-size: 14px;
 }
 
+.product-grid {
+ grid-template-columns:1fr 1fr 1fr;
+ display: grid;
+
+
+}
