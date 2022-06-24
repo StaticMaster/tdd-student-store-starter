@@ -1,4 +1,5 @@
-const app = require("./app")
+// import express from 'express'
+ import app from "./app.js"
 
 const port = process.env.PORT || 3001
 

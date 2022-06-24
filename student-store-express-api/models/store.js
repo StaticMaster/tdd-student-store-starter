@@ -1,89 +1,54 @@
-// const express =require("express")
+// const express =require("express");
 // const router = express.Router()
-// const {storage} = require ("../data/storage")
-// const { BadRequestError } = require("../utils/errors")
+// const {storage} = require ("../data/storage");
+// const { BadRequestError, NotFoundError} = require ("../utils/errors");
 
-//  class Store{
-//   static async listProducts() {
-//     const products = storage.get("products").value()
-//     return products
-//   }
-// }
-
-// static async listTransfers() {
-//     // list all items in the transfers array
-//     const transfers = storage.get("transfers").value()
-//     return transfers
-//   }
+import express from "express";
+import {Router} from "express";
+import storage from "../data/storage.js";
+import {BadRequestError, NotFoundError} from "../utils/errors.js";
 
 
-//   static async fetchProductById(productId) {
-//     // fetch a single transaction
-//     const transaction = storage
-//       .get("transactions")
-//       .find({ id: Number(transactionId) })
-//       .value()
-//     return transaction
-//   }
 
-// //   static async fetchTransferById(transferId) {
-// //     // fetch a single transfer
-// //     const transfer = storage
-// //       .get("transfers")
-// //       .find({ id: Number(transferId) })
-// //       .value()
-// //     return transfer
-// //   }
+ class Store{
+  static async listProducts() {
+    const products = storage.get("products")
+    return products
+  }
+static async fetchProductById(productId) {
+    // fetch a single transaction
+    const product = storage
+      .get("products")
+      .find({ id: Number(productId)})
+    return product
+  }
 
-// //   static async recordTransaction(transaction) {
-// //     // create a new transaction
+static async recordTransaction(transaction) {
+    // create a new transaction
 
-// //     if (!transaction) {
-// //       throw new BadRequestError(`No transaction sent.`)
-// //     }
-// //     const requiredFields = ["description", "category", "amount"]
-// //     requiredFields.forEach((field) => {
-// //       if (!transaction[field] && transaction[field] !== 0) {
-// //         throw new BadRequestError(`Field: "${field}" is required in transaction`)
-// //       }
-// //     })
+    if (!transaction) {
+      throw new BadRequestError(`No transaction sent.`)
+    }
+    const requiredFields = ["description", "category", "amount"]
+    requiredFields.forEach((field) => {
+      if (!transaction[field] && transaction[field] !== 0) {
+        throw new BadRequestError(`Field: "${field}" is required in transaction`)
+      }
+    })
 
-// //     const transactions = await Bank.listTransactions()
-// //     const transactionId = transactions.length + 1
-// //     const postedAt = new Date().toISOString()
+    const transactions = await Bank.listTransactions()
+    const transactionId = transactions.length + 1
+    const postedAt = new Date().toISOString()
 
-// //     const newTransaction = { id: transactionId, postedAt, ...transaction }
+    const newTransaction = { id: transactionId, postedAt, ...transaction }
 
-// //     storage.get("transactions").push(newTransaction).write()
+    storage.get("transactions").push(newTransaction).write()
 
-// //     return newTransaction
-// //   }
+    return newTransaction
+  }
 
-// //  { static async recordTransfer(transfer) {
-// //     // create a new transfer
 
-// //     if (!transfer) {
-// //       throw new BadRequestError(`No transfer sent.`)
-// //     }
-// //     const requiredFields = ["recipientEmail", "memo", "amount"]
-// //     requiredFields.forEach((field) => {
-// //       if (!transfer[field] && transaction[field] !== 0) {
-// //         throw new BadRequestError(`Field: "${field}" is required in transfer`)
-// //       }
-// //     })
-
-// //     const transfers = await Bank.listTransfers()
-// //     const transferId = transfers.length + 1
-// //     const postedAt = new Date().toISOString()
-
-// //     const newTransfer = { id: transferId, postedAt, ...transfer }
-
-// //     storage.get("transfers").push(newTransfer).write()
-
-// //     return newTransfer
-// //   }
-// // }
-
- module.exports = Store
-
+}
+// module.exports = Store
+export default Store
 

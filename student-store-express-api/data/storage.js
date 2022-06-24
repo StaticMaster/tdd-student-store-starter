@@ -1,6 +1,11 @@
-const path = require("path")
-const low = require("lowdb")
-const FileSync = require("lowdb/adapters/FileSync")
+// const path = require("path")
+// const low = require("lowdb")
+// const FileSync = require("lowdb/adapters/FileSync")
+import Lowdb from "lowdb"
+import path from "path"
+import FileSync from "lowdb/adapters/FileSync.js"
+
+
 
 class Storage {
   constructor() {
@@ -23,6 +28,7 @@ class Storage {
   }
 }
 
-module.exports = {
-  storage: new Storage(),
-}
+// module.exports = {
+//   storage: new Storage(),
+// }
+export default Storage

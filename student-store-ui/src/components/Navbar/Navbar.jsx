@@ -2,6 +2,7 @@ import * as React from "react";
 import "./Navbar.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
+// import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
 export default function Navbar() {
   return (
@@ -12,7 +13,6 @@ export default function Navbar() {
           document.querySelector(".home").style.marginLeft = "550px";
           document.querySelector(".navbar-nav").style.marginLeft = "550px";
     }}>
-      
       <svg
         className="cart-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -44,10 +44,10 @@ export default function Navbar() {
        
       <div className="open-slide">
       <ul className="navbar-nav">
-        <li><a href="/#">Home</a></li>
-        <li><a href="/#shop">Shop</a></li>
-        <li><a href="/#Contact">Contact Us</a></li>
-        <li><a href="/#About">About</a></li>
+       <center><li><a href="/#">Home</a></li></center>
+       <center><li><a href="/#shop">Shop</a></li></center>
+       <center><li><a href="/#Contact">Contact Us</a></li></center>
+        <center><li><a href="/#About">About</a></li></center>
       </ul>
       </div>
     </nav>

@@ -2,6 +2,8 @@ import * as React from "react"
 import "./Home.css"
 import SubNavbar from "../Sub-Navbar/SubNavbar"
 import ProductGrid from "../ProductGrid/ProductGrid"
+import Hero from "../Hero/Hero"
+
 export default function Home(props) {
   
   console.log("1",props.products)
@@ -9,23 +11,34 @@ export default function Home(props) {
     <div className="Home">
 
     <SubNavbar SearchData={props.SearchData}/>
-     <ProductGrid products={props.products}/> 
-
+    <Hero/>
+<div className="buttons">
+  
 <div className="categories">
-<h3 onClick={()=>{props.getDataCategory("food")}}>Food</h3>
+<button className="button"><h3 onClick={()=>{props.getDataCategory("food")}}>Food</h3></button>
 </div>
 
+<div className="categories">
+<button className="button"><h3 onClick={()=>{props.getDataCategory("tech")}}>Tech</h3></button>
+</div>
 
+<div className="categories">
+<button className="button"><h3 onClick={()=>{props.getDataCategory("clothing")}}>Clothing</h3></button>
+</div>
+
+<div className="categories">
+<button className="button"><h3 onClick={()=>{props.getDataCategory("accessories")}}>Accessories</h3></button>
+</div>
+</div> 
+
+<ProductGrid products={props.products}/> 
 
 <div className="about" id="About">
 <h2>About</h2>
-<p>
-The codepath student store offers great products at great prices from a great team and for a great cause.
-We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.
-All proceeds go towards bringing high quality CS education to college students around the country.  
+<p>The codepath student store offers great products at great prices from a great team and for a great cause.We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.
+<p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
+<p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
 </p>
-
-
 </div>
 
   <div className="contact" id="Contact">
@@ -37,7 +50,6 @@ All proceeds go towards bringing high quality CS education to college students a
   </div>
   
 
-      <p>Home</p>
     </div>
   )
 }

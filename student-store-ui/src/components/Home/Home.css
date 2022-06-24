@@ -6,3 +6,35 @@
   display: flex;
   flex-direction: column;
 }
+
+.class{
+
+display: flex;
+/* flex-direction: row; */
+
+}
+
+.button{
+transition-duration: 0.4s;
+display: flex;
+border-radius: 8px;
+}
+
+.button:hover{
+
+background-color: green;
+color:white
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+
+/* .contact{
+
+text-aligm
+} */

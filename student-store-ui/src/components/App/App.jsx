@@ -8,9 +8,14 @@ import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { useState} from "react";
 import axios from "axios"
-
+import Hero from "../Hero/Hero"
 
 export default function App (){
+
+ const [isOpen, setIsOpen] = useState(false)
+ const handleOnToggle = () => {
+  setIsOpen(!isOpen)
+}
 const URL="https://codepath-store-api.herokuapp.com/store" 
 const [products,setProducts]= useState([])
 async function getData(){
@@ -72,8 +77,8 @@ setProducts(array);
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar   />
-          <Sidebar/>
+          <Navbar handleOnToggle={handleOnToggle}  />
+          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Home products={products} SearchData={SearchData} getDataCategory={getDataCategory}/>
         </main>
       </BrowserRouter>

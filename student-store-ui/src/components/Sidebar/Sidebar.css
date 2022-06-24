@@ -34,3 +34,18 @@
     margin-left: 50px;
 }
 
+.sidebar .toggle-button {
+    margin-top: 20px;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar.open {
+    width: 575px;
+}
