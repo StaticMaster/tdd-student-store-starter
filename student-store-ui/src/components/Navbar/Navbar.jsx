@@ -6,36 +6,50 @@ import Home from "../Home/Home";
 export default function Navbar() {
   return (
     <nav className="navbar">
+
+<a href="#" onClick = {()=>{
+          document.querySelector("#side-menu").style.width = "550px";
+          document.querySelector(".home").style.marginLeft = "550px";
+          document.querySelector(".navbar-nav").style.marginLeft = "550px";
+    }}>
+      
+      <svg
+        className="cart-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="white"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <circle cx="6" cy="19" r="2" />
+        <circle cx="17" cy="19" r="2" />
+        <path d="M17 17h-11v-14h-2" />
+        <path d="M6 5l14 1l-1 7h-13" />
+      </svg>
+      </a>
+
       <div className="link">
         {/* <Link to="/"> */}
         <img
           src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"
           alt="main logo"
           height="50px"
-          width="50px"
-        />
-        {/* </Link> */}
-      </div>
-      <div className="links"></div>
-      <ul>
-        <li to="/">
-        {/* <Home/> */}
-        </li>
-        {/* <li to="/about"><About/></li> */}
-        {/* <li to="/contact"><Contact/></li> */}
-        {/* <li to="/buy now"><BuyNow/></li> */}
+          width="50px"/>
+       </div>
+       
+      <div className="open-slide">
+      <ul className="navbar-nav">
+        <li><a href="/#">Home</a></li>
+        <li><a href="/#shop">Shop</a></li>
+        <li><a href="/#Contact">Contact Us</a></li>
+        <li><a href="/#About">About</a></li>
       </ul>
-      {/* <NavLink className="navbar" activeClassName="active-navbar" to="/" exact>
-        <Logo>
-          <NavLink
-            className="logo"
-            activeClassName="logo"
-            to="/"
-            exact
-          ></NavLink>
-        </Logo>
-      </NavLink> */}
-      <p>Navbar</p>
+      </div>
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 import * as React from "react"
 import Navbar from "../Navbar/Navbar"
-// import Sidebar from "../Sidebar/Sidebar"
+import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import Header from "../Header/Header"
@@ -39,6 +39,27 @@ async function SearchData(searchValue){
    
 }
 
+async function getDataCategory(category){
+const responseData = await axios.get(URL).then((response)=> {
+return response.data.products
+});
+
+let array = [];
+for (let i=0; i< responseData.length; i++){
+  if (responseData[i].category == category) array.push(responseData[i]);
+}
+setProducts(array);
+}
+  
+
+
+
+
+
+
+
+
+
 // <BrowserRouter basname="routes">
 // <Link to = "/"/>
 // <Link to = "/products/:productId"/>
@@ -52,8 +73,8 @@ async function SearchData(searchValue){
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar   />
-          {/* <Sidebar  /> */}
-          <Home products={products} SearchData={SearchData}/>
+          <Sidebar/>
+          <Home products={products} SearchData={SearchData} getDataCategory={getDataCategory}/>
         </main>
       </BrowserRouter>
     </div>

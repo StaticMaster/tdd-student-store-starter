@@ -1,0 +1,56 @@
+.navbar {
+    background-color: #3b5998;
+    overflow: hidden;
+    height: 63px;
+}
+
+.navbar a{
+    float: left;
+    justify-content: center;
+    /* display: block; */
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar-nav {
+    transition: 0.35s;
+    justify-content: center;
+    display:flex
+    
+}
+
+.navbar ul{
+    margin: 8px 0 0 0;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.navbar-nav a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar-buttons{
+    justify-content: center;
+}
+
+/* 3 dashes button */
+.open-slide a{
+    stroke: #fff;;
+}
+.open-slide a:hover{
+    stroke: #3b5998;
+    background-color: #fff;
+}
+@media(max-width:568px){
+    .navbar-nav{display: none;}
+}
+
+
