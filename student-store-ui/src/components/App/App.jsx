@@ -1,6 +1,6 @@
 import * as React from "react"
 import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
+// import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import Header from "../Header/Header"
@@ -11,7 +11,6 @@ import axios from "axios"
 
 
 export default function App (){
-
 const URL="https://codepath-store-api.herokuapp.com/store" 
 const [products,setProducts]= useState([])
 async function getData(){
@@ -21,7 +20,6 @@ const responseData= await axios.get(URL).then((response)=>{
 setProducts([...responseData])
 
 }
-
 
 useEffect(()=> {
 getData();
@@ -38,9 +36,15 @@ async function SearchData(searchValue){
   
   }
   setProducts(array)
-
+   
 }
 
+// <BrowserRouter basname="routes">
+// <Link to = "/"/>
+// <Link to = "/products/:productId"/>
+// <Link to  = "*"/>
+
+// </BrowserRouter>
 
   return (
     <div className="app">
@@ -48,7 +52,7 @@ async function SearchData(searchValue){
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar   />
-          <Sidebar  />
+          {/* <Sidebar  /> */}
           <Home products={products} SearchData={SearchData}/>
         </main>
       </BrowserRouter>
