@@ -3,6 +3,7 @@ import "./ShoppingCart.css";
 
 export default function ShoppingCart(props) {
   let totalAmount = 0;
+  {console.log (props.shoppingCart)}
   return (
     <div className="cart">
       <div className="list">
@@ -20,7 +21,7 @@ export default function ShoppingCart(props) {
             <h4>Cost</h4>
           </div>
           <div className="bottom">{
-         props.shoppingCart.map((item)=>{
+         props.shoppingCart?.map((item)=>{
         let found =props.allProducts.find((product)=>
         {
             return item.id == product.id;
@@ -41,8 +42,8 @@ export default function ShoppingCart(props) {
         </div>
       </div>
     </div>
- ) 
- ( function ProductRow (props) {
+ ) }
+ (function ProductRow (props) {
 let name = props. product.name;
 let quantity;
 props.shoppingCart.forEach((item)=>{
@@ -64,4 +65,4 @@ return (
 
 )
 }
-  )};
+  );

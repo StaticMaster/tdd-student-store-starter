@@ -16,6 +16,8 @@ export default function App (){
  const handleOnToggle = () => {
   setIsOpen(!isOpen)
 }
+
+const [shoppingCart, setshoppingCart] = useState([])
 const URL="https://codepath-store-api.herokuapp.com/store" 
 const [products,setProducts]= useState([])
 async function getData(){
@@ -78,7 +80,7 @@ setProducts(array);
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar handleOnToggle={handleOnToggle}  />
-          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
+          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} shoppingCart={shoppingCart} products={products}/>
           <Home products={products} SearchData={SearchData} getDataCategory={getDataCategory}/>
         </main>
       </BrowserRouter>
