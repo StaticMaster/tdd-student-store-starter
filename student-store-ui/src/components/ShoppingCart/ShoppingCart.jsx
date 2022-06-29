@@ -1,15 +1,21 @@
 import * as React from "react";
 import "./ShoppingCart.css";
 
+
+<h3>Shopping Cart</h3>
+
+
 export default function ShoppingCart(props) {
   let totalAmount = 0;
   {console.log (props.shoppingCart)}
   return (
+    <div className="shopping-title">
+     <h3>Shopping Cart</h3>
     <div className="cart">
       <div className="list">
         <div className="top">
           <div className="name">
-            <h4>Name</h4>
+            <h4>Name</h4><br></br>
           </div>
           <div>
             <h4>Quantity</h4>
@@ -41,6 +47,7 @@ export default function ShoppingCart(props) {
          </div>
         </div>
       </div>
+    </div>
     </div>
  ) }
  (function ProductRow (props) {

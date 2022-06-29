@@ -7,14 +7,10 @@ export default function Sidebar({ isOpen, handleOnToggle,shoppingCart, products 
     <section className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <div className="side-nav" id="side-menu">
         <button className="btn-close" onClick={handleOnToggle}>
-          sb
+        <i className="material-icons md-48">arrow_forward</i>
         </button>
       {isOpen? <ShoppingCart shoppingCart={shoppingCart} products={products}/>:null
 }
-
-
-
-
 
 
         {/* <div className="name"> */}

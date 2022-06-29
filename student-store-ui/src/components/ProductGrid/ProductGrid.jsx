@@ -6,7 +6,7 @@ export default function ProductGrid(props) {
   return (
     <div className="product-grid" id="shop">
       {props.products.map((item) => {
-        return <ProductCard item={item} key={item.id} />;
+        return <ProductCard item={item} key={item.id}  handleAddItemToCart = {props.handleAddItemToCart} handleRemoveItemToCart = {props.handleRemoveItemToCart}/>;
       })}
     </div>
   );

@@ -28,6 +28,7 @@ width:100%;
     right:22px;
     font-size: 36px;
     margin-left: 50px;
+    opacity: 0.5;
 }
 
 .sidebar .toggle-button {
@@ -71,6 +72,18 @@ width:100%;
 
 .box{
 color:#fff
+}
+
+.shopping-cart .header-row {
+    display: flex;
+    height: 50px;
+    background: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.checkout-form{
+
+color: #fff;
 
 
 }
